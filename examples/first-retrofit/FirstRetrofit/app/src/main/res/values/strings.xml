@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">First Retrofit</string>
+    <string name="title_enter_post">Enter Post</string>
+    <string name="hint_title">Learning Retrofit</string>
+    <string name="hint_body">Hi</string>
+    <string name="action_submit">Submit</string>
+</resources>

@@ -9,5 +9,9 @@ Taken from the tutorial: https://code.tutsplus.com/tutorials/sending-data-with-r
 - separate the code and function for posting the json and formurlencoded to see the examples easier
 
 ## Notes that I took (for myself)
+- To convert Json schema to POJO, use this as a reference: http://www.jsonschema2pojo.org/ 
+- In AndroidManifest.xml, add this:
+```xml
+<uses-permission android:name="android.permission.INTERNET" />
+```
 - ...
-
