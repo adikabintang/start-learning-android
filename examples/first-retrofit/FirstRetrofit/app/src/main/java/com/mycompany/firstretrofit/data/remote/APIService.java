@@ -13,16 +13,6 @@ import retrofit2.http.POST;
  */
 
 public interface APIService {
-    // with standard way
-    /*
-    @POST("/posts")
-    @FormUrlEncoded
-    Call<Post> savePost(
-            @Field("title") String title,
-            @Field("body") String body,
-            @Field("userId") String userId
-    );
-    */
 
     //with rxjava
     @POST("/posts")

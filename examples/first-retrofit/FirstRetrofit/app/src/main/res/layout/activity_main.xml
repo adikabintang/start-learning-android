@@ -56,16 +56,29 @@
         app:layout_constraintTop_toBottomOf="@+id/et_title" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_post"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="24dp"
-        android:text="@string/action_submit"
+        android:text="@string/action_submit_post"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_body"
         app:layout_constraintHorizontal_bias="0.498" />
+
+    <Button
+        android:id="@+id/button_formurlencoded"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/action_submit_form"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_post"
+        app:layout_constraintHorizontal_bias="0.504" />
 
 </android.support.constraint.ConstraintLayout>

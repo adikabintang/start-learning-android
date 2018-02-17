@@ -28,12 +28,13 @@ public class MainActivity extends AppCompatActivity {
 
         final EditText titleEt = (EditText) findViewById(R.id.et_title);
         final EditText bodyEt = (EditText) findViewById(R.id.et_body);
-        Button submitBtn = (Button) findViewById(R.id.button);
+        Button submitBtnPost = (Button) findViewById(R.id.button_post);
+        Button submitBtnForm = (Button) findViewById(R.id.button_formurlencoded);
         mResponseTv = (TextView) findViewById(R.id.tv_response);
 
         mAPIService = ApiUtils.getAPIService();
 
-        submitBtn.setOnClickListener(new View.OnClickListener() {
+        submitBtnPost.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
@@ -41,7 +42,19 @@ public class MainActivity extends AppCompatActivity {
                 String body = bodyEt.getText().toString().trim();
 
                 if (!TextUtils.isEmpty(title) && !TextUtils.isEmpty(body)) {
-                    sendPost(title, body);
+                    sendPostJson(title, body);
+                }
+            }
+        });
+
+        submitBtnForm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String title = titleEt.getText().toString().trim();
+                String body = bodyEt.getText().toString().trim();
+
+                if (!TextUtils.isEmpty(title) && !TextUtils.isEmpty(body)) {
+                    sendPostFormUrlEncoded(title, body);
                 }
             }
         });
@@ -54,26 +67,13 @@ public class MainActivity extends AppCompatActivity {
         mResponseTv.setText(response);
     }
 
-    public void sendPost(String title, String body) {
-        // standard way
-        /*
-        mAPIService.savePost(title, body, "1")
-                .enqueue(new Callback<Post>() {
-                    @Override
-                    public void onResponse(Call<Post> call, Response<Post> response) {
-                        if (response.isSuccessful()) {
-                            showResponse(response.body().toString());
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<Post> call, Throwable t) {
-
-                    }
-                });
-                */
-        //with rx
-        /*mAPIService.savePost(title, body, "1")
+    public void sendPostJson(String title, String body) {
+        Post post = new Post();
+        post.setBody(body);
+        post.setId(1);
+        post.setTitle(title);
+        post.setUserId(12);
+        mAPIService.savePost(post)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new DisposableObserver<Post>() {
@@ -92,13 +92,11 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 });
-                */
-        Post post = new Post();
-        post.setBody("the_body");
-        post.setId(1);
-        post.setTitle("Oi_title");
-        post.setUserId(12);
-        mAPIService.savePost(post)
+    }
+
+    public void sendPostFormUrlEncoded(String title, String body) {
+        //with rx
+        mAPIService.savePost(title, body, "1")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new DisposableObserver<Post>() {

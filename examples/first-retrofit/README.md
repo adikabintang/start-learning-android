@@ -14,4 +14,18 @@ Taken from the tutorial: https://code.tutsplus.com/tutorials/sending-data-with-r
 ```xml
 <uses-permission android:name="android.permission.INTERNET" />
 ```
-- ...
+- When testing this on the Android, make sure there is a server listening to the specified port (see build.gradle for the server URL). For this testing purpose, set any server (nginx/apache/anything) to listen to that port is fine (but will return 404 not found).
+
+How the example app looks like:
+
+![alt text](app_screenshot.png)
+
+Results taken from Wireshark:
+
+POST form-urlencoded:
+
+![alt text](post-formurlencoded.png)
+
+POST json:
+
+![alt text](posting_json.png)
