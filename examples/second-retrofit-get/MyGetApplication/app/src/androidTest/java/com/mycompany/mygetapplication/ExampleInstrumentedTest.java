@@ -1,4 +1,4 @@
-package com.mycompany.mygetappilcation;
+package com.mycompany.mygetapplication;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
