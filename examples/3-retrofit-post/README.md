@@ -1,4 +1,4 @@
-# First application example using retrofit2, rxjava2
+# The second application example using retrofit2, rxjava2
 
 ## Where is it from
 Taken from the tutorial: https://code.tutsplus.com/tutorials/sending-data-with-retrofit-2-http-client-for-android--cms-27845
