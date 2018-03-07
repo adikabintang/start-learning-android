@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Weleh</string>
+    <string name="employee_id_hint">Employee ID</string>
+    <string name="button_employee_enter">"I'm in!"</string>
 </resources>
