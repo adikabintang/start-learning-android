@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">NFC Tag Emulator</string>
+    <string name="servicedesc">NFC Tag Emulator</string>
+    <string name="aiddescription">oiioio</string>
+</resources>
